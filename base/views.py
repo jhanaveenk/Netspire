@@ -1,16 +1,10 @@
-# from email import message
-# from multiprocessing import context
-# from pydoc_data.topics import topics
-# from pydoc_data import topics
-from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.http import HttpResponse
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.contrib.auth import authenticate, login, logout
-# from django.contrib.auth.forms import UserCreationForm
-from .models import Message, Room, Topic, User
-# from django.contrib.auth.models import User
+from .models import Room, Topic, Message, User
 from .forms import RoomForm, UserForm, MyUserCreationForm
 
 
@@ -171,13 +165,15 @@ def deleteMessage(request, pk):
 def updateUser(request):
     user = request.user
     form = UserForm(instance=user)
+
     if request.method == 'POST':
         form = UserForm(request.POST, request.FILES, instance=user)
         if form.is_valid():
             form.save()
             return redirect('user-profile', pk=user.id)
-    return render(request, 'base/update-user.html', {'form':form})
-    
+
+    return render(request, 'base/update-user.html', {'form': form})
+
 def topicsPage(request):
     q = request.GET.get('q') if request.GET.get('q') != None else ''
     topics = Topic.objects.filter(name__icontains = q)
