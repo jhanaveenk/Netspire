@@ -11,7 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y64(^nmuf)ip@8!w5h+9190^=h_5^4+zle(@ctfq%bfu)ez6w%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['netspire.up.railway.app', '127.0.0.1']
 
