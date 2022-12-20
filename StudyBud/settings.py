@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-y64(^nmuf)ip@8!w5h+9190^=h_5^4+zle(@ctfq%bfu)ez6w%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['netspire.up.railway.app', '127.0.0.1']
 
 
 # Application definition
@@ -39,7 +39,6 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
 
     'whitenoise.middleware.WhiteNoiseMiddleware',
-
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -48,6 +47,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CSRF_TRUSTED_ORIGINS = ['http://*.railway.app',
+                        'https://netspire.up.railway.app/']
 
 ROOT_URLCONF = 'StudyBud.urls'
 
@@ -144,7 +146,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Access-Control-Allow-Origin
 
-# CORS_ALLOW_ALL_ORIGINS: True
+CORS_ALLOW_ALL_ORIGINS: True
 
 # s3 bucket
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
