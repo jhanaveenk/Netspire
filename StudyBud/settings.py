@@ -1,4 +1,9 @@
 from pathlib import Path
+# import environ
+
+# Initialise environment variables
+# env = environ.Env()
+# environ.Env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -11,7 +16,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-y64(^nmuf)ip@8!w5h+9190^=h_5^4+zle(@ctfq%bfu)ez6w%'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['netspire.up.railway.app', '127.0.0.1']
 
@@ -148,10 +153,10 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOW_ALL_ORIGINS: True
 
 # s3 bucket
-DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-AWS_S3_ACCESS_KEY_ID = 'AKIAX2OE4VJHTLU2YKGW'
-AWS_S3_SECRET_ACCESS_KEY = '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'
-AWS_STORAGE_BUCKET_NAME = 'netspire'
-AWS_QUERYSTRING_AUTH =False
-AWS_DEFAULT_ACL = None
-STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+DEFAULT_FILE_STORAGE = 
+AWS_S3_ACCESS_KEY_ID = 
+AWS_S3_SECRET_ACCESS_KEY =
+AWS_STORAGE_BUCKET_NAME = 
+AWS_QUERYSTRING_AUTH =
+AWS_DEFAULT_ACL =
+STATICFILES_STORAGE = 
